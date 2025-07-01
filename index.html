@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Bonding - Interactive Mind Map</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: auto;
+        }
+
+        /* Mind Map Container */
+        .mind-map {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .mind-map ul {
+            list-style: none;
+            padding-top: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Node Styling */
+        .mind-map li {
+            padding: 0 5px 20px 5px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .mind-map .node {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            min-width: 180px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .mind-map .node strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        
+        /* Root Node Styling */
+        .mind-map > li > .node {
+            background-color: #2c3e50;
+            color: white;
+            border-color: #1a252f;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Child Node Styling */
+        .mind-map > li > ul > li > .node {
+            background-color: #e9ecef;
+            border-color: #3498db;
+        }
+        
+        .mind-map ul ul li .node {
+            background-color: #f8f9fa;
+        }
+
+        /* Interactive Parent Node Styling */
+        .mind-map .parent-node > .node {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .mind-map .parent-node > .node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Expander/Collapser Icon (+/-) */
+        .mind-map .parent-node > .node::before {
+            content: '-';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+            background-color: #6c757d;
+            color: white;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 16px;
+            font-weight: bold;
+        }
+
+        .mind-map .collapsed > .node::before {
+            content: '+';
+            background-color: #28a745;
+        }
+
+        /* Hiding Collapsed Nodes */
+        .mind-map .collapsed > ul {
+            display: none;
+        }
+
+        /* Connecting Lines */
+        .mind-map li::before, .mind-map li::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            border-color: #adb5bd;
+            border-style: solid;
+            border-width: 0 0 2px 0;
+            z-index: -1;
+        }
+        
+        .mind-map li::before { /* Vertical line from parent */
+            top: 0;
+            height: 20px;
+            width: 0;
+            border-left-width: 2px;
+        }
+
+        .mind-map > li::before {
+             border: none; /* No line above root */
+        }
+        
+        .mind-map ul li::after { /* Horizontal line to node */
+            top: -22px;
+            height: 0;
+            width: 50%;
+            border-bottom-width: 2px;
+        }
+
+        .mind-map li:first-child::after { left: 50%; border-radius: 5px 0 0 0; }
+        .mind-map li:last-child::after { left: 0; width: 50%; border-radius: 0 5px 0 0; }
+        .mind-map li:first-child:last-child::after { width: 0; border: none; }
+    </style>
+</head>
+<body>
+
+<ul class="mind-map">
+    <li class="parent-node">
+        <div class="node">⛓️ Chemical Bonding</div>
+        <ul>
+            <!-- Topic 1 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>1. Ionic Bonding Overview</strong></div>
+                <ul>
+                    <li><div class="node"><strong>Definition:</strong> Electrostatic attraction between oppositely charged ions.</div></li>
+                    <li><div class="node"><strong>Formation:</strong> Electron transfer from a metal (cation) to a non-metal (anion).</div></li>
+                    <li><div class="node"><strong>Structure:</strong> Forms a Giant Ionic Lattice.</div></li>
+                </ul>
+            </li>
+            <!-- Topic 2 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>2. Representing Ionic Bonding</strong></div>
+                <ul>
+                    <li><div class="node"><strong>Dot-and-Cross:</strong> Shows outer-shell e⁻ transfer. Ions are in [brackets] with charge.</div></li>
+                    <li><div class="node"><strong>Principle:</strong> Final compound must be electrically neutral.</div></li>
+                </ul>
+            </li>
+            <!-- Topic 3 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>3. Ionic Trends</strong></div>
+                <ul>
+                    <li><div class="node"><strong>Ionic Radius:</strong> Cations (+) are smaller than atoms; Anions (-) are larger.</div></li>
+                    <li><div class="node"><strong>Isoelectronic Ions:</strong> Same e⁻ config. More protons = smaller radius.</div></li>
+                </ul>
+            </li>
+            <!-- Topic 4 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>4. Physical Properties of Ionic Compounds</strong></div>
+                <ul>
+                    <li><div class="node"><strong>Melting/Boiling Point:</strong> High due to strong lattice forces.</div></li>
+                    <li><div class="node"><strong>Conductivity:</strong> Only when molten or aqueous (mobile ions).</div></li>
+                    <li><div class="node"><strong>Solubility:</strong> Often soluble in polar solvents (e.g., H₂O).</div></li>
+                </ul>
+            </li>
+            <!-- Topic 5 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>5. Covalent Bonding Overview</strong></div>
+                <ul>
+                    <li><div class="node"><strong>Definition:</strong> Electrostatic attraction between shared e⁻ pair and two nuclei.</div></li>
+                    <li><div class="node"><strong>Formation:</strong> Electron sharing between non-metals.</div></li>
+                    <li><div class="node"><strong>Types:</strong> Single, Double, Triple.</div></li>
+                </ul>
+            </li>
+            <!-- Topic 6 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>6. Covalent Dot-and-Cross Diagrams</strong></div>
+                <ul>
+                    <li><div class="node">Shows shared e⁻ pairs in overlapping shells. Also shows lone pairs.</div></li>
+                    <li><div class="node"><strong>Dative Bonding:</strong> One atom donates both e⁻. Represented by an arrow (→). E.g., NH₄⁺.</div></li>
+                </ul>
+            </li>
+            <!-- Topic 7 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>7. Bond Length & Strength</strong></div>
+                <ul>
+                    <li><div class="node"><strong>Relationship:</strong> Shorter bonds are stronger.</div></li>
+                    <li><div class="node"><strong>Length Order:</strong> Single > Double > Triple</div></li>
+                    <li><div class="node"><strong>Strength Order:</strong> Triple > Double > Single</div></li>
+                </ul>
+            </li>
+            <!-- Topic 8 -->
+            <li class="parent-node collapsed">
+                <div class="node"><strong>8. Shapes of Covalent Compounds</strong></div>
+                <ul>
+                    <li><div class="node"><strong>VSEPR Theory:</strong> Electron pairs repel to minimize repulsion.</div></li>
+                    <li><div class="node"><strong>Repulsion Order:</strong> LP-LP > LP-BP > BP-BP</div></li>
+                    <li class="parent-node collapsed">
+                        <div class="node"><strong>Key Shapes & Angles</strong></div>
+                        <ul>
+                            <li><div class="node"><strong>Linear:</strong> 180° (2 BP)</div></li>
+                            <li><div class="node"><strong>Trigonal Planar:</strong> 120° (3 BP)</div></li>
+                            <li><div class="node"><strong>Tetrahedral:</strong> 109.5° (4 BP)</div></li>
+                            <li><div class="node"><strong>Trigonal Pyramidal:</strong> 107° (3 BP, 1 LP)</div></li>
+                            <li><div class="node"><strong>Bent/Non-linear:</strong> 104.5° (2 BP, 2 LP)</div></li>
+                            <li><div class="node"><strong>Octahedral:</strong> 90° (6 BP)</div></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const parentNodes = document.querySelectorAll('.mind-map .parent-node');
+        parentNodes.forEach(node => {
+            const clickableNode = node.querySelector('.node');
+            clickableNode.addEventListener('click', function (event) {
+                event.stopPropagation();
+                node.classList.toggle('collapsed');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
