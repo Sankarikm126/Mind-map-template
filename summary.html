@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Summary: Chemical Bonding</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #2c3e50;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Topic Item Styling */
+        .topic-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .topic-title {
+            background-color: #ecf0f1;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+            user-select: none;
+            font-size: 1.1em;
+            color: #34495e;
+        }
+        
+        .topic-title:hover {
+            background-color: #dde4e6;
+        }
+
+        /* Arrow Icon */
+        .topic-title::before {
+            content: '▶';
+            margin-right: 15px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            color: #3498db;
+        }
+        
+        .topic-item.active .topic-title::before {
+            transform: rotate(90deg);
+        }
+
+        /* Content Styling */
+        .topic-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            background-color: #fdfdfd;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+        
+        .topic-content ul {
+            padding-left: 20px;
+            list-style-type: '• ';
+            margin: 15px 0;
+        }
+
+        /* Active State */
+        .topic-item.active {
+            border-color: #3498db;
+        }
+        
+        .topic-item.active .topic-content {
+            max-height: 500px; /* Adjust if content is very long */
+            padding: 1px 20px 15px 20px;
+        }
+
+        .topic-content strong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>⛓️ Expandable Summary: Chemical Bonding</h1>
+
+    <div class="topic-item">
+        <div class="topic-title">1. Ionic Bonding Overview</div>
+        <div class="topic-content">
+            <ul>
+                <li>Defined as the strong <strong>electrostatic attraction</strong> between oppositely charged ions.</li>
+                <li>Forms via the <strong>transfer of electrons</strong> from a metal (forms a positive cation) to a non-metal (forms a negative anion).</li>
+                <li>Results in a stable, repeating 3D structure called a <strong>Giant Ionic Lattice</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">2. Representing Ionic Bonding</div>
+        <div class="topic-content">
+            <ul>
+                <li><strong>Dot-and-cross diagrams</strong> are used to show the transfer of outer-shell electrons.</li>
+                <li>The resulting ions are drawn in <strong>square brackets</strong> with the charge shown on the top-right.</li>
+                <li>The final compound must be electrically <strong>neutral</strong>, so the ratio of ions is determined by their charges (e.g., Ca²⁺ and 2x F⁻ to make CaF₂).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">3. Ionic Trends</div>
+        <div class="topic-content">
+            <ul>
+                <li><strong>Cations (+)</strong> are always <strong>smaller</strong> than their parent atoms because they have lost an entire outer electron shell.</li>
+                <li><strong>Anions (-)</strong> are always <strong>larger</strong> than their parent atoms due to increased electron-electron repulsion in the outer shell.</li>
+                <li>For <strong>isoelectronic ions</strong> (same electron configuration), the radius decreases as the proton number increases due to a stronger nuclear pull.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">4. Physical Properties of Ionic Compounds</div>
+        <div class="topic-content">
+            <ul>
+                <li><strong>High Melting/Boiling Points:</strong> A large amount of energy is required to overcome the strong electrostatic forces within the giant lattice.</li>
+                <li><strong>Electrical Conductivity:</strong> They do not conduct when solid (ions fixed), but do conduct when <strong>molten or dissolved</strong> (ions are mobile).</li>
+                <li><strong>Solubility:</strong> Many are soluble in polar solvents like water, as the polar molecules can surround and stabilise the ions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">5. Covalent Bonding Overview</div>
+        <div class="topic-content">
+            <ul>
+                <li>Defined as the strong electrostatic attraction between a <strong>shared pair of electrons</strong> and the nuclei of the two bonded atoms.</li>
+                <li>Occurs between <strong>non-metal atoms</strong>.</li>
+                <li>Can form <strong>single</strong> (2e⁻), <strong>double</strong> (4e⁻), or <strong>triple</strong> (6e⁻) bonds.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">6. Covalent Dot-and-Cross Diagrams</div>
+        <div class="topic-content">
+            <ul>
+                <li>Used to show shared electron pairs in overlapping outer shells.</li>
+                <li><strong>Dative (coordinate) bonds</strong> occur when one atom donates both electrons to the shared pair. This is shown with an arrow (e.g., in NH₄⁺ and Al₂Cl₆).</li>
+                <li>Non-bonding electron pairs are called <strong>lone pairs</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">7. Bond Length & Bond Strength</div>
+        <div class="topic-content">
+            <ul>
+                <li><strong>Bond Length:</strong> The distance between the nuclei of two bonded atoms.</li>
+                <li><strong>Bond Energy:</strong> The energy required to break the bond.</li>
+                <li>Generally, <strong>shorter bonds are stronger</strong>. The order of strength is: Triple > Double > Single. The order of length is: Single > Double > Triple.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-item">
+        <div class="topic-title">8. Shapes of Covalent Compounds (VSEPR)</div>
+        <div class="topic-content">
+            <ul>
+                <li><strong>VSEPR Theory:</strong> Valence Shell Electron Pair Repulsion theory states that electron pairs arrange themselves to minimise repulsion.</li>
+                <li><strong>Order of Repulsion:</strong> Lone pair-lone pair > Lone pair-bond pair > Bond pair-bond pair.</li>
+                <li>Each lone pair reduces the bond angle by ~2.5°. For example, CH₄ (109.5°), NH₃ (107°), H₂O (104.5°).</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const topicItems = document.querySelectorAll('.topic-item');
+
+        topicItems.forEach(item => {
+            const title = item.querySelector('.topic-title');
+            title.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
